@@ -1,68 +1,206 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* RESETEO BÁSICO  */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app{
   min-height: 100vh;
+  min-width: 100vw;
+  flex-wrap: wrap;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-image: url('https://github.com/Annihilation78/CryptoCasino/raw/main/CryptoCasino/src/assets/casino.png');
+  color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.content-container h2{
+  color: white;
 }
 
-button {
+
+.container {
+  max-width: 1100px; /* Ajusta este ancho si lo deseas */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Mantén el header por delante del contenido */
+  background-color: #222;
+  color: #fff;
+  padding: 15px;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-x-4 {
+  justify-content: space-between;
+}  
+
+/* NAVEGACION */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MAIN */
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.game-item {
+  background-color: #fff;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.game-item img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.btn {
+  display: block;
+  background-color: #007bff; /* Color azul para el boton */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* SECCIONES */
+.section {
+    padding: 10px;
+}
+
+/* PROMOCIONES */
+.promotion-list {
+    /* Podrías usar grid o flexbox, aqui un ejemplo con flex: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.promotion-item {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 30%; /* Ocupa aproximadamente el 30% de cada fila */
+    text-align: center;
+}
+
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container {
+  background-color: lightyellow;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.8;
+}
+
+.py-6 {
+  display: grid;
+  grid-template-columns: 30% 70%; /* Ajusta la distribución de columnas  */
+  gap: 20px;
+  justify-content: center;
+  padding: 10% 4%;
+}
+
+.content-container{
+  padding: 0% 15%;
+}
+
+.chatbot-container {
+  z-index: 1000;
+  position: fixed; /* Lo fijamos en la ventana */
+  bottom: 40px; /* Distancia del borde inferior */
+  right: 40px;  
+  height: 500px;
+  width: 300px;
+  background-color: lightgrey;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  text-align: center;
+  
+  /* Agrega otros estilos necesarios para tu chatbot */
 }
